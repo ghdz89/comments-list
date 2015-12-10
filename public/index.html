@@ -22,16 +22,44 @@
         render: function() {
           return (
             <div className="commentBox">
-              Hola Mundo! Soy un "Comment Box" ja!
+              <h1>Comentario</h1>
+              <CommentList /> //this will inject the comment list into the comment box
+              <CommentForm />
             </div>
           );
         }
       });
 
+      //The comment list component
+      var CommentList = React.createClass({
+        render: function() {
+          return (
+            <div className="commentList">
+              Hola! A "Comment List" ja!
+            </div>
+          );
+        }
+      });
+
+      //The comment form where comments will be typed
+      var CommentForm = React.createClass({
+        render: function() {
+          return (
+            <div className="commentForm">
+              Un "Comment Form" lol.
+            </div>
+          )
+        }
+      })
+
+      //This is like saying: instantiate the root, start the framework, and then
+      //insert the markup into a raw DOM element (the second arg)
       ReactDOM.render(
         <CommentBox />, //Here we render the React var CommentBox
         document.getElementById('content')
         );
+
+
     </script>
   </body>
 </html>
